@@ -14,6 +14,10 @@ all: rogue run clean
 rogue:
 	$(CC) $(SOURCES) $(LIBSOURCES) $(CFLAGS) -o $@
 
+debug: CFLAGS += -g
+
+debug: rogue;
+
 run:
 	./rogue out 2>error.txt
 
